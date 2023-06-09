@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "alwaysStrict": true,
+        "declaration": true,
+        "declarationMap": true,
+        "downlevelIteration": true,
+        "importHelpers": true,
+        "inlineSources": true,
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "moduleResolution": "node",
+        "noEmitHelpers": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "preserveWatchOutput": true,
+        "pretty": true,
+        "sourceMap": true,
+        "strict": true,
+        "strictBindCallApply": false,
+        "target": "ES2015",
+        "noErrorTruncation": true,
+        "allowSyntheticDefaultImports": true
+    }
+}
