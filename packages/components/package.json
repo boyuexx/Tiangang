@@ -1,0 +1,10 @@
+{
+  "name": "@tiangang/components",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "storybook": "^7.0.20",
+    "tamagui": "^1.32.1"
+  }
+}

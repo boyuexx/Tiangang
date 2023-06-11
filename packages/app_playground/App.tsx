@@ -5,7 +5,7 @@
  * @format
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -62,8 +62,15 @@ function App(): JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  // useEffect(() => {
+  //   fetch('/api/page_json?page_id=1').then(data => {
+  //     setpageJSON(data)
+  //   })
+  // })
+
   return (
     <SafeAreaView style={backgroundStyle}>
+      {/* <Render pageSource={pageJSON} /> */}
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
