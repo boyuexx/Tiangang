@@ -1,13 +1,13 @@
 import { init, plugins } from '@alilc/lowcode-engine';
-import { createFetchHandler } from '@alilc/lowcode-datasource-fetch-handler'
+import { createFetchHandler } from '@alilc/lowcode-datasource-fetch-handler';
 import EditorInitPlugin from './plugins/plugin-editor-init';
 import UndoRedoPlugin from '@alilc/lowcode-plugin-undo-redo';
 import ZhEnPlugin from '@alilc/lowcode-plugin-zh-en';
 import CodeGenPlugin from '@alilc/lowcode-plugin-code-generator';
 import DataSourcePanePlugin from '@alilc/lowcode-plugin-datasource-pane';
 import SchemaPlugin from '@alilc/lowcode-plugin-schema';
-import CodeEditorPlugin from "@alilc/lowcode-plugin-code-editor";
-import ManualPlugin from "@alilc/lowcode-plugin-manual";
+import CodeEditorPlugin from '@alilc/lowcode-plugin-code-editor';
+import ManualPlugin from '@alilc/lowcode-plugin-manual';
 import InjectPlugin from '@alilc/lowcode-plugin-inject';
 import SimulatorResizerPlugin from '@alilc/lowcode-plugin-simulator-select';
 import ComponentPanelPlugin from '@alilc/lowcode-plugin-components-pane';
@@ -33,9 +33,10 @@ async function registerPlugins() {
           value: 'https://github.com/alibaba/lowcode-demo/tree/main/demo-basic-antd',
         },
         {
-          "key": "antd 物料",
-          "value": "https://github.com/alibaba/lowcode-materials/tree/main/packages/antd-lowcode-materials"
-        }
+          key: 'antd 物料',
+          value:
+            'https://github.com/alibaba/lowcode-materials/tree/main/packages/antd-lowcode-materials',
+        },
       ],
     },
   });
@@ -62,7 +63,6 @@ async function registerPlugins() {
 
   await plugins.register(LoadIncrementalAssetsWidgetPlugin);
 
-
   // 插件参数声明 & 传递，参考：https://lowcode-engine.cn/site/docs/api/plugins#设置插件参数版本示例
   await plugins.register(DataSourcePanePlugin, {
     importPlugins: [],
@@ -72,8 +72,8 @@ async function registerPlugins() {
       },
       {
         type: 'jsonp',
-      }
-    ]
+      },
+    ],
   });
 
   await plugins.register(CodeEditorPlugin);
@@ -86,7 +86,7 @@ async function registerPlugins() {
   await plugins.register(PreviewSamplePlugin);
 
   await plugins.register(CustomSetterSamplePlugin);
-};
+}
 
 (async function main() {
   await registerPlugins();
@@ -98,7 +98,7 @@ async function registerPlugins() {
     // 默认绑定变量
     supportVariableGlobally: true,
     requestHandlersMap: {
-      fetch: createFetchHandler()
+      fetch: createFetchHandler(),
     },
   });
 })();

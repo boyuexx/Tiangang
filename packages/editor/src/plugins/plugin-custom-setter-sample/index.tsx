@@ -14,6 +14,6 @@ const CustomSetterSamplePlugin = (ctx: IPublicModelPluginContext) => {
       setters.registerSetter('CustomSetter', CustomSetter);
     },
   };
-}
+};
 CustomSetterSamplePlugin.pluginName = 'CustomSetterSamplePlugin';
 export default CustomSetterSamplePlugin;

@@ -1,8 +1,6 @@
 import { IPublicModelPluginContext } from '@alilc/lowcode-types';
 import { Button } from '@alifd/next';
-import {
-  saveSchema,
-} from '../../services/mockService';
+import { saveSchema } from '../../services/mockService';
 
 // 保存功能示例
 const PreviewSamplePlugin = (ctx: IPublicModelPluginContext) => {
@@ -13,7 +11,9 @@ const PreviewSamplePlugin = (ctx: IPublicModelPluginContext) => {
         const scenarioName = config.get('scenarioName');
         saveSchema(scenarioName);
         setTimeout(() => {
-          const search = location.search ? `${location.search}&scenarioName=${scenarioName}` : `?scenarioName=${scenarioName}`;
+          const search = location.search
+            ? `${location.search}&scenarioName=${scenarioName}`
+            : `?scenarioName=${scenarioName}`;
           window.open(`./preview.html${search}`);
         }, 500);
       };
@@ -32,7 +32,7 @@ const PreviewSamplePlugin = (ctx: IPublicModelPluginContext) => {
       });
     },
   };
-}
+};
 PreviewSamplePlugin.pluginName = 'PreviewSamplePlugin';
 PreviewSamplePlugin.meta = {
   dependencies: ['EditorInitPlugin'],
