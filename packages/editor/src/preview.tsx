@@ -4,16 +4,19 @@ import { Loading } from '@alifd/next';
 import { buildComponents, assetBundle, AssetLevel, AssetLoader } from '@alilc/lowcode-utils';
 import ReactRenderer from '@alilc/lowcode-react-renderer';
 import { injectComponents } from '@alilc/lowcode-plugin-inject';
-import { createFetchHandler } from '@alilc/lowcode-datasource-fetch-handler'
+import { createFetchHandler } from '@alilc/lowcode-datasource-fetch-handler';
 
-import { getProjectSchemaFromLocalStorage, getPackagesFromLocalStorage } from './services/mockService';
+import {
+  getProjectSchemaFromLocalStorage,
+  getPackagesFromLocalStorage,
+} from './services/mockService';
 
 const getScenarioName = function () {
   if (location.search) {
     return new URLSearchParams(location.search.slice(1)).get('scenarioName') || 'index';
   }
   return 'index';
-}
+};
 
 const SamplePreview = () => {
   const [data, setData] = useState({});
@@ -68,8 +71,8 @@ const SamplePreview = () => {
         components={components}
         appHelper={{
           requestHandlersMap: {
-            fetch: createFetchHandler()
-          }
+            fetch: createFetchHandler(),
+          },
         }}
       />
     </div>

@@ -29,6 +29,6 @@ const DefaultSettersRegistryPlugin = (ctx: IPublicModelPluginContext) => {
       });
     },
   };
-}
+};
 DefaultSettersRegistryPlugin.pluginName = 'DefaultSettersRegistryPlugin';
 export default DefaultSettersRegistryPlugin;

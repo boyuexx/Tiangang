@@ -24,7 +24,7 @@ const EditorInitPlugin = (ctx: IPublicModelPluginContext, options: any) => {
       project.openDocument(schema);
     },
   };
-}
+};
 EditorInitPlugin.pluginName = 'EditorInitPlugin';
 EditorInitPlugin.meta = {
   preferenceDeclaration: {
@@ -44,7 +44,7 @@ EditorInitPlugin.meta = {
         key: 'info',
         type: 'object',
         description: '用于扩展信息',
-      }
+      },
     ],
   },
 };

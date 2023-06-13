@@ -14,13 +14,17 @@ const Logo: React.FC<IProps> = (props): React.ReactElement => {
   const urls = scenarioInfo?.urls || [];
   return (
     <div className="lowcode-plugin-logo">
-      <a className="logo" target="blank" href={props.href || 'https://lowcode-engine.cn'} style={{ backgroundImage: `url(${props.logo})` }} />
+      <a
+        className="logo"
+        target="blank"
+        href={props.href || 'https://lowcode-engine.cn'}
+        style={{ backgroundImage: `url(${props.logo})` }}
+      />
       <div className="scenario-name">{scenarioDisplayName}</div>
-      {
-      urls && (
+      {urls && (
         <Dropdown
           className="info-dropdown"
-          trigger={(
+          trigger={
             <img
               style={{
                 height: '18px',
@@ -29,17 +33,16 @@ const Logo: React.FC<IProps> = (props): React.ReactElement => {
               }}
               src="https://img.alicdn.com/imgextra/i4/O1CN013upU1R1yl5wVezP8k_!!6000000006618-2-tps-512-512.png"
             />
-          )}
+          }
           triggerType="click"
         >
           <Menu onItemClick={(key, item) => window.open(key, '_blank')}>
-            {
-              urls.map((url: any) => <Menu.Item key={url.value}>{url.key}</Menu.Item>)
-            }
+            {urls.map((url: any) => (
+              <Menu.Item key={url.value}>{url.key}</Menu.Item>
+            ))}
           </Menu>
         </Dropdown>
-      )
-    }
+      )}
     </div>
   );
 };
@@ -55,7 +58,7 @@ const LogoSamplePlugin = (ctx: IPublicModelPluginContext) => {
         area: 'topArea',
         type: 'Widget',
         name: 'logo',
-        content: <Logo scenarioDisplayName={scenarioDisplayName} scenarioInfo={scenarioInfo}  />,
+        content: <Logo scenarioDisplayName={scenarioDisplayName} scenarioInfo={scenarioInfo} />,
         contentProps: {
           logo: 'https://img.alicdn.com/imgextra/i4/O1CN013w2bmQ25WAIha4Hx9_!!6000000007533-55-tps-137-26.svg',
           href: 'https://lowcode-engine.cn',
@@ -66,7 +69,7 @@ const LogoSamplePlugin = (ctx: IPublicModelPluginContext) => {
       });
     },
   };
-}
+};
 LogoSamplePlugin.pluginName = 'LogoSamplePlugin';
 LogoSamplePlugin.meta = {
   dependencies: ['EditorInitPlugin'],

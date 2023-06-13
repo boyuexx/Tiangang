@@ -25,6 +25,7 @@
         "strictBindCallApply": false,
         "target": "ES2015",
         "noErrorTruncation": true,
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": "./packages"
     }
 }
